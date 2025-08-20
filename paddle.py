@@ -16,10 +16,10 @@ class Paddle(Turtle):
             self.goto(self.x_axis, 0)
 
     def up(self):
-        self.y_axis += 10
+        self.y_axis += 20
         self.goto(self.x_axis, self.y_axis)
 
     def down(self):
-        self.y_axis -= 10
+        self.y_axis -= 20
         self.goto(self.x_axis, self.y_axis)
 

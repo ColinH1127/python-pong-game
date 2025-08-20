@@ -6,23 +6,30 @@ class Ball(Turtle):
         self.shape("circle")
         self.color("white")
         self.penup()
-        self.hideturtle()
-        self.goto(600, 0)
-        self.ball_speed = "fastest"
+
+        self.goto(-580, -380)
+        self.ball_speed = 5
         self.speed(self.ball_speed)
-        self.ball_heading = 150
+        self.x_move = 10
+        self.y_move = 10
+
 
     def ball_move(self):
-        self.showturtle()
-        self.setheading(self.ball_heading)
-        self.forward(10)
-        if self.ycor() >= 380:
-            self.ball_bounce()
-        if self.ycor() <= -380:
-            self.ball_bounce()
+
+        new_x = self.xcor() + self.x_move
+        new_y = self.ycor() + self.y_move
+        self.goto(new_x, new_y)
 
 
-    def ball_bounce(self):
-        self.ball_heading = 360 - self.ball_heading
-        self.setheading(self.ball_heading)
+
+
+
+
+    def bounce(self):
+        self.y_move *= -1
+
+    def paddle_bounce(self):
+        self.x_move *= -1
+
+
 
